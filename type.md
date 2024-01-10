@@ -4,6 +4,21 @@
 以下内容收集于互联网,<br>
 证书用法未与标准文档校准<br>
 
+## 证书作用
+```txt
+ KeyUsage ::= BIT STRING {
+           digitalSignature        (0),
+           nonRepudiation          (1),
+           keyEncipherment         (2),
+           dataEncipherment        (3),
+           keyAgreement            (4),
+           keyCertSign             (5),
+           cRLSign                 (6),
+           encipherOnly            (7),
+           decipherOnly            (8) }
+```
+详见RFC3280
+
 ## 根证书
 密钥用法：认可签名，证书签名，CRL签名
 keyUsage=nonRepudiation, keyCertSign,cRLSign
@@ -21,7 +36,7 @@ keyUsage=digitalSignature,keyAgreement
 extendedKeyUsage=serverAuth,clientAuth
 
 ## WEB服务器
-密钥用法：数字签名，认可签名，密钥加密，数据加密，密钥协商
+密钥用法：数字签名，认证签名，密钥加密，数据加密，密钥协商
 增强密钥用法：服务器验证
 keyUsage=digitalSignature,nonRepudiation,keyEncipherment,dataEncipherment,keyAgreement
 extendedKeyUsage=serverAuth
