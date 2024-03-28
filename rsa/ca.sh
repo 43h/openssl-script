@@ -4,7 +4,8 @@
 ##############################
 
 #! /bin/sh
-rm -rf demoCA
+./lc.sh
+
 mkdir demoCA
 echo 01 > demoCA/serial
 touch demoCA/index.txt
