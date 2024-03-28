@@ -14,3 +14,6 @@ openssl req -new -batch -out $1.csr -key $1.key -subj /CN=$1/C=CN/ST=GD/L=SZ/O=T
 
 #issue certificate
 openssl ca -cert ca-cert.pem -keyfile ca.key -in $1.csr -out $1.pem -outdir . -batch
+
+#
+rm -rf $1.csr
